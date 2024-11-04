@@ -6,8 +6,13 @@ On disease diagnosis it has four parts which are skin cancer detection, brain mr
 The front end use react js with plain css files
 
 ## Installations and packages
+
 react 
+
 react-router-dom
+
 axios
+
 react-scroll
+
 react-icons
