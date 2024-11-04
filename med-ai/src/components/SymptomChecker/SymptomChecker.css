@@ -1,0 +1,567 @@
+/* CSS Variables for consistent theming */
+:root {
+    /* Colors */
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #3476d3;
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --light-bg: #f8fafc;
+    --border-color: #e2e8f0;
+    
+    /* Typography */
+    --font-primary: system-ui, -apple-system, sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Base Container */
+  .symptom-checker-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    background-color: white;
+    min-height: 100vh;
+  }
+  
+  /* Header Styles */
+  .symptom-checker-header {
+    background: linear-gradient(135deg, var(--primary-color), #1e40af);
+    color: white;
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .header-content h1 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .header-icon {
+    animation: pulse 2s infinite;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: var(--spacing-xl) 0;
+    position: relative;
+  }
+  
+  .progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 0;
+  }
+  
+  .progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .step-number {
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-sm);
+    transition: all var(--transition-normal);
+  }
+  
+  .progress-step.active .step-number {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+  }
+  
+  .progress-step.completed .step-number {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+  }
+  
+  /* Symptom Selector */
+  .symptom-selector-container {
+    background-color: var(--light-bg);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+  }
+  
+  .symptoms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+  
+  .symptom-button {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 8px;
+    transition: all var(--transition-fast);
+    width: 100%;
+    text-align: left;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .symptom-button:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+  }
+  
+  .symptom-button.selected {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+  }
+  
+  /* Severity Selector */
+  .severity-selector .severity-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+  
+  .severity-button {
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background-color: white;
+    transition: all var(--transition-normal);
+  }
+  
+  .severity-button.mild { --severity-color: #22c55e; }
+  .severity-button.moderate { --severity-color: #f59e0b; }
+  .severity-button.severe { --severity-color: #ef4444; }
+  .severity-button.critical { --severity-color: #7f1d1d; }
+  
+  .severity-button.selected {
+    border-color: var(--severity-color);
+    background-color: color-mix(in srgb, var(--severity-color) 10%, white);
+  }
+  
+  /* Duration Selector */
+  .duration-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+  
+  .duration-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  /* Medical History */
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+  
+  .condition-button {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    transition: all var(--transition-fast);
+  }
+  
+  .condition-button.selected {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  /* Results Section */
+  .results-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-xl);
+  }
+  
+  .condition-card {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .percentage-bar {
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    transition: width var(--transition-normal);
+  }
+  
+  /* Navigation Buttons */
+  .navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--spacing-xl);
+  }
+  
+  .nav-button {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+  }
+  
+  .nav-button.next,
+  .nav-button.analyze {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .nav-button.next:hover,
+  .nav-button.analyze:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .nav-button.back {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  /* Animations */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+  
+  .spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .symptom-checker-container {
+      padding: var(--spacing-md);
+    }
+    
+    .symptoms-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .severity-options,
+    .duration-options {
+      grid-template-columns: 1fr;
+    }
+    
+    .progress-bar {
+      overflow-x: auto;
+      padding-bottom: var(--spacing-md);
+    }
+    
+    .step-title {
+      font-size: 0.875rem;
+    }
+  }
+  
+  /* Accessibility Improvements */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  .nav-button:focus-visible,
+  .symptom-button:focus-visible,
+  .severity-button:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+
+/* Progress Bar Enhancements */
+.progress-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--spacing-xl) 0;
+  position: relative;
+  padding: var(--spacing-lg) 0;  /* Added padding to ensure visibility */
+  background-color: white;
+  z-index: 1;
+}
+
+.progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;  /* Increased height for better visibility */
+  background-color: var(--border-color);
+  transform: translateY(-50%);  /* Center the line properly */
+  z-index: -1;
+}
+
+/* Added progress indicator */
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 3px;
+  background-color: var(--primary-color);
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: width var(--transition-normal);
+  width: calc((100% / (5)) * var(--step-progress, 0));
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 120px; /* Ensure minimum width for text */
+}
+
+.step-number {
+  width: 40px;  /* Increased size */
+  height: 40px;  /* Increased size */
+  background-color: white;
+  border: 3px solid var(--border-color);  /* Increased border width */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-sm);
+  transition: all var(--transition-normal);
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.progress-step.active .step-number {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);  /* Added glow effect */
+}
+
+.progress-step.completed .step-number {
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+  color: white;
+}
+
+.step-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 120px;  /* Limit text width */
+}
+
+.progress-step.active .step-title {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Duration Selector Enhancements */
+.duration-selector {
+  padding: var(--spacing-xl);
+  background-color: var(--light-bg);
+  border-radius: 12px;
+}
+
+.duration-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.duration-button {
+  position: relative;
+  padding: var(--spacing-xl);
+  background-color: white;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+.duration-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+}
+
+.duration-button:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.duration-button.selected {
+  border-color: var(--primary-color);
+  background-color: rgba(37, 99, 235, 0.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.duration-button.selected::before {
+  transform: scaleX(1);
+}
+
+.duration-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: center;
+}
+
+.duration-content h4 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.duration-content span {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.duration-button:hover .duration-content h4,
+.duration-button.selected .duration-content h4 {
+  color: var(--primary-color);
+}
+
+/* Add animation for selection */
+@keyframes select-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+.duration-button.selected {
+  animation: select-pulse 1s;
+}
+
+/* Icon styling in duration buttons */
+.duration-content svg {
+  color: var(--text-secondary);
+  transition: color var(--transition-normal);
+}
+
+.duration-button:hover svg,
+.duration-button.selected svg {
+  color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .progress-bar {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: var(--spacing-md) var(--spacing-xs);
+    gap: var(--spacing-md);
+    scroll-snap-type: x mandatory;
+  }
+
+  .progress-step {
+    scroll-snap-align: start;
+    min-width: 100px;
+    flex: 0 0 auto;
+  }
+
+  .step-title {
+    font-size: 0.75rem;
+    max-width: 80px;
+  }
+
+  .duration-options {
+    grid-template-columns: 1fr;
+  }
+
+  .duration-button {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .progress-bar::before,
+  .progress-bar::after {
+    background-color: CanvasText;
+  }
+
+  .step-number {
+    border: 2px solid CanvasText;
+  }
+}
+

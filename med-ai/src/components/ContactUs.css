@@ -1,0 +1,138 @@
+/* body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+} */
+
+.contact-us-section {
+  padding: 80px 20px;
+  background-color: aliceblue;
+}
+
+.contact-us-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.contact-us-info, .contact-us-form {
+  flex: 1;
+  min-width: 300px;
+  padding: 40px;
+}
+
+.contact-us-info {
+  background: #007bff;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-us-info h2 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.contact-us-info p {
+  font-size: 18px;
+  color: #f0f4f8;
+  margin-bottom: 20px;
+}
+
+.contact-details {
+  margin-top: 20px;
+}
+
+.contact-detail {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-detail i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.contact-detail h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.contact-detail p {
+  font-size: 16px;
+  color: #f0f4f8;
+}
+
+.contact-us-form h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .contact-us-container {
+    flex-direction: column;
+  }
+
+  .contact-us-form {
+    margin-top: 20px;
+  }
+
+  .contact-us-info, .contact-us-form {
+    padding: 20px;
+  }
+}

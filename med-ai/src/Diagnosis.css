@@ -1,0 +1,118 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+  }
+  
+  .medical-diagnostics {
+    padding: 80px 20px;
+    background-color: #fff;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 36px;
+    color: #000000;
+    font: 40px;
+    /* background-color: #fff; */
+    /* transition: background-color 0 ease; */
+  }
+  
+  .diagnostic-row {
+    display: flex;
+    align-items: center;
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .diagnostic-content {
+    flex: 1;
+    padding-right: 20px;
+    padding-left: 40px;
+  }
+  
+  .diagnostic-content h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .diagnostic-content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .diagnostic-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-left: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .diagnostic-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .diagnostic-image {
+      margin-left: 0;
+      margin-top: 20px;
+      width: 100%;
+      height: auto;
+    }
+  
+    .diagnostic-content {
+      text-align: center;
+      padding-right: 0px;
+      /* padding-left: 20px; */
+      /* margin-left: 70px; */
+      padding: 20px;
+    }
+  
+    .diagnostic-content h3 {
+      font-size: 20px;
+      padding: 20px;
+    }
+  
+    .diagnostic-content p {
+      font-size: 14px;
+    }
+  
+    .cta-button {
+      width: 100%;
+      padding: 15px;
+    }
+  }
+  
+  
